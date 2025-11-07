@@ -6,13 +6,14 @@ import icon from '../../resources/icon.png?asset'
 function createWindow(): void {
   const { width } = screen.getPrimaryDisplay().workAreaSize
   const mainWindow = new BrowserWindow({
-    width: 600,
-    height: 600,
-    x: 600 - width,
-    y: 350,
+    width: 500,
+    height: 300,
+    x: width - 500,
+    y: 50,
     show: false,
-    transparent: true,
-    frame: false,
+    // transparent: true,
+    // frame: false,
+    alwaysOnTop: true,
     autoHideMenuBar: true,
     ...(process.platform === 'linux' ? { icon } : {}),
     webPreferences: {
@@ -21,7 +22,7 @@ function createWindow(): void {
     }
   })
 
-  // mainWindow.webContents.openDevTools()
+  mainWindow.webContents.openDevTools()
 
   mainWindow.on('ready-to-show', () => {
     mainWindow.show()

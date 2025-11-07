@@ -1,0 +1,7 @@
+main {
+  @apply 'bg-slate-50 px-5 rounded-bl-lg rounded-br-lg -mt-[8px] pb-2';
+
+  div {
+    @apply 'text-slate-700 truncate mb-2';
+  }
+}
